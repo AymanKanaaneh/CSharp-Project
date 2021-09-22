@@ -1,0 +1,35 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Protobuf Include="Protos\FourInRow.proto" GrpcServices="Server" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Grpc.AspNetCore" Version="2.32.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.8">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.8" />
+  </ItemGroup>
+
+	<ItemGroup>
+		<DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.Dotnet" Version="2.0.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\FourInRowCreateDB\FourInRowCreateDB.csproj" />
+	  <ProjectReference Include="..\FourInRowLibrary\FourInRowLibrary.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Reference Include="FourInRowLibrary">
+	    <HintPath>..\FourInRowLibrary\bin\Debug\netstandard2.0\FourInRowLibrary.dll</HintPath>
+	  </Reference>
+	</ItemGroup>
+
+</Project>

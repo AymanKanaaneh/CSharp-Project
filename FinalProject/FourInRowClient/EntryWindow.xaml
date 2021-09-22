@@ -1,0 +1,41 @@
+﻿<Window x:Class="FourInRowClient.EntryWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FourInRowClient"
+        mc:Ignorable="d"
+       Title="ConnectFour" Height="500" Width="900" Closing="Window_Closing" ResizeMode="NoResize">
+    <Window.Background>
+        <ImageBrush ImageSource="images/fourInrowBackground.jpg" />
+    </Window.Background>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Label Content="Welcome to four in row" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="5" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="DarkBlue"  FontSize="30" FontWeight="Bold" Name="lblName" Margin="14,0,0,0"/>
+        <Label Grid.Column="5" Grid.Row="1"  VerticalAlignment="Center" HorizontalAlignment="Center" Content="Players Online:" FontWeight="ExtraBold" FontSize="16" Margin="5" Grid.ColumnSpan="5" Foreground="DarkBlue"/>
+
+        <ListBox FontSize="14" Background="black" Foreground="AliceBlue"  Grid.Row="1" Grid.RowSpan="8" Name="lbUsers"  Margin="51,50,0,30" Grid.Column="5" SelectionChanged="lbUsers_SelectionChanged" SelectionMode="Single" Grid.ColumnSpan="2" HorizontalAlignment="Left" Width="197"/>
+
+        <Button FontSize="17" Background="DarkBlue" Foreground="AliceBlue" x:Name="Searchbtn"  Content="to search window" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Click="Searchbtn_Click" Width="150"></Button>
+    </Grid>
+</Window>

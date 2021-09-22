@@ -1,0 +1,52 @@
+﻿<Window x:Class="FourInRowClient.SearchWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FourInRowClient"
+        mc:Ignorable="d"
+        
+        Title="SearchWindow" Height="380" Width="480" ResizeMode="NoResize">
+
+    <DockPanel>
+
+        <Menu Background="Black" Foreground="White">
+            <MenuItem Header="search">
+                <MenuItem Foreground="Black" Header="games list" Click="games_Click"></MenuItem>
+                <MenuItem Foreground="Black" Header="ongoing games" Click="ongoing_games_Click"></MenuItem>
+                <MenuItem Foreground="Black" Header="users" Click="users_Click"></MenuItem>
+            </MenuItem>
+
+            <MenuItem Header="sort">
+                <MenuItem Foreground="Black" Header="sort window" Click="sort_Click"></MenuItem>
+            </MenuItem>
+        </Menu>
+        <Grid Background="black">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <TextBox Background="DarkBlue" Foreground="AliceBlue" Grid.Row="1" Grid.ColumnSpan="7" Text="to see games go to search then games list"></TextBox>
+            <TextBox Background="DarkBlue" Foreground="AliceBlue" Grid.Row="2" Grid.ColumnSpan="7" Text="to see ongoing games go to search then ongoing games"></TextBox>
+            <TextBox Background="DarkBlue" Foreground="AliceBlue" Grid.Row="3" Grid.ColumnSpan="7" Text="to see games between users go to search then users"></TextBox>
+            <TextBox Background="DarkBlue" Foreground="AliceBlue" Grid.Row="4" Grid.ColumnSpan="7" Text="to see sorted data go to sort then sort window"></TextBox>
+        </Grid>
+
+    </DockPanel>
+
+</Window>

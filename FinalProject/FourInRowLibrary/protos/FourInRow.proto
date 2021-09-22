@@ -1,0 +1,143 @@
+syntax = "proto3";
+
+option csharp_namespace = "GrpcFIRService";
+
+package fourInRow;
+
+// The greeting service definition.
+service FourInRow {
+	rpc Connect (UserModel) returns (stream ChatMessage);
+	rpc Disconnect (UserModel) returns (Empty);
+	rpc InsertUser (UserModel) returns (Empty);
+	rpc InsertGame(GameModel) returns (Empty);
+	rpc GetUserById (UserModel) returns (UserModel);
+	rpc GetUserByUserName (NameString) returns (UserModel);
+	rpc UserExists (UserModel) returns (Empty);
+	rpc UpdateUsers (Empty) returns (Users);
+	rpc SendMessage (ChatMessage) returns (Empty);
+	rpc Peer2peerConnect(GameMessage) returns (stream GameMessage);
+	rpc SendGameMessage (GameMessage) returns (Empty);
+	rpc GetAllUsers(Empty)returns(ShowUsersList);
+	rpc GetShowedUsers(Empty)returns(ShowUsersList);
+	rpc GetShowedPercentUsers(Empty)returns(ShowUsersList);
+	rpc GetShowedGames(Empty)returns(ShowGamesList);
+	rpc GetShowedGamesBetween2Users(UsersModel)returns(Show2players);
+	rpc GetShowedOngoingGames(Empty)returns(ShowGamesList);
+	rpc GetNextSerialNumber(Empty)returns(SerialNumber);
+	rpc CheckSerialNumber(SerialNumber)returns(boolmessage);
+	rpc UpdateEndGame(GameModel)returns(Empty);
+	rpc GetGameBySerialNumber(SerialNumber)returns(GameModel);
+	rpc CheckIfAlreadyUpdatedGame(SerialNumber)returns(boolmessage);
+	rpc UpdateUser(UserModel)returns(Empty);
+	rpc InsertUser2Played(UserModel) returns (Empty);
+	rpc CheckUsertInPlayed (UserModel) returns(boolmessage);
+	rpc RemoveUserFPlayed(UserModel) returns (Empty);
+	rpc serverRemoveUser(Users) returns (Empty);
+	rpc serverAddUser(UserModel) returns (Empty);
+}
+
+message UserModel{
+
+string userName = 1;
+string hashedPassword = 2;
+int32 numOfGames = 3;
+int32 numOFWins = 4;
+int32 numOfLoses = 5;
+int32 points = 6;
+
+}
+
+message PointsUpdateModel{
+	int32 points = 1;
+	string username =2;
+}
+
+message UsersModel{
+	UserModel user1 = 1;
+	UserModel user2 = 2;
+}
+
+message NameString{
+	string name = 1;
+}
+
+message SerialNumber{
+int32 serialnumber=1;
+}
+
+message GameModel{
+
+string firstPlayer = 1;
+string secondPlayer = 2;
+string Winner = 3;
+string  startingTime = 4;
+int32 serialnumber = 5;
+bool draw = 6 ;
+bool ongoing = 7;
+int32 firstplayerpoints = 8;
+int32 secondPlayerpoints = 9;
+
+}
+
+message UserId{
+
+string userName = 1;
+string HashedPassword = 2;
+
+}
+message boolmessage{
+	bool istrue = 1;
+}
+
+message UserGame{
+
+string userName = 1;
+bool turn = 2;
+
+}
+
+// empty type
+message Empty{}
+
+message Users{
+	repeated string userNames = 1;
+}
+
+enum MessageType{
+	MESSAGE = 0;
+	UPDATE = 1;
+	APPROVED = 2;
+	REJECT = 3;
+}
+
+// The chat message containing all data needed
+message ChatMessage {
+  MessageType type = 1;
+  string fromUser = 2;
+  string toUser = 3;
+  string message = 4;
+}
+
+message GameMessage {
+	bool turn = 1;
+	ChatMessage cMessage = 2; 
+}
+
+message GamesList{
+	repeated GameModel games = 1;
+}
+
+message ShowUsersList{
+	repeated string usershow = 1;
+}
+
+message ShowGamesList{
+	repeated string gameshow = 1;
+}
+
+message Show2players{
+	repeated string gameshow = 1;
+	int32 gamesnumber = 2;
+	int32 p1wins = 3;
+	int32 p2wins = 4;
+}

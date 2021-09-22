@@ -1,0 +1,2 @@
+obj\Debug\net5.0\Protos/FourInRow.cs \
+obj\Debug\net5.0\Protos/FourInRowGrpc.cs: Protos/FourInRow.proto

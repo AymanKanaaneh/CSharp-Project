@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <Compile Update="Games.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="OngoingGames.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="SearchWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="SortWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UsersSearch.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="EntryWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Games.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="GameWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="LoginWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="OngoingGames.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="RegisterWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="SearchWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="SortWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UsersSearch.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>

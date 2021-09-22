@@ -1,0 +1,54 @@
+﻿<Window x:Class="FourInRowClient.SortWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FourInRowClient"
+        mc:Ignorable="d"
+        Background="Black"
+        Title="SortWindow" Height="450" Width="1000" ResizeMode="NoResize">
+    <Grid x:Name="TheGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Label Foreground="DarkBlue" Content="Lets Sort" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="5" Grid.ColumnSpan="3" 
+               FontSize="24" ></Label>
+
+        <ListBox FontSize="14" Foreground="AliceBlue" Background="DarkBlue" x:Name="lbusers" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="6" Grid.RowSpan="7" ></ListBox>
+
+        <Button Foreground="AliceBlue" Background="DarkBlue" x:Name="btn_usernameSort" Content="sort by username" HorizontalAlignment="Left" Grid.Column="8" Grid.Row="2" 
+                Grid.ColumnSpan="2" Click="btn_usernameSort_Click" ></Button>
+        <Button Foreground="AliceBlue" Background="DarkBlue" x:Name="btn_gamesnumberSort" Content="sort by number of games" HorizontalAlignment="Center" Grid.Column="9"
+                Grid.Row="4" Grid.ColumnSpan="2" Click="btn_gamesnumberSort_Click"></Button>
+        <Button Foreground="AliceBlue" Background="DarkBlue" x:Name="btn_winnsSort" Grid.Column="8" Grid.Row="6"  Click="btn_winnsSort_Click"
+                Content="sort by winns" HorizontalAlignment="Left"></Button>
+        <Button Foreground="AliceBlue" Background="DarkBlue" x:Name="btn_lose_Sort" Grid.Column="11" Grid.Row="2"  Click="btn_losesSort_Click"
+                Content="sort by loses" HorizontalAlignment="Left"></Button>
+        <Button Foreground="AliceBlue" Background="DarkBlue" x:Name="btn_points_Sort" Grid.Column="11" Grid.Row="6"  Click="btn_points_Sort_Click"
+                Content="sort by points" HorizontalAlignment="Left"></Button>
+
+    </Grid>
+</Window>

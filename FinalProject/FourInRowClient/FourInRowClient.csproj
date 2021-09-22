@@ -1,0 +1,50 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+
+	<TargetFramework>netcoreapp3.0</TargetFramework>
+	<UseWPF>true</UseWPF>
+	<UseWindowsForms>true</UseWindowsForms> 
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="MainWindow.xaml.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="images\fourInrowBackground.jpg" />
+    <None Remove="images\login.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Remove="MainWindow.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Google.Protobuf" Version="3.17.3" />
+    <PackageReference Include="Grpc.Net.Client" Version="2.38.0" />
+    <PackageReference Include="MySql.Data" Version="8.0.26" />
+    <PackageReference Include="System.ObjectModel" Version="4.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FourInRowLibrary\FourInRowLibrary.csproj" />
+  </ItemGroup>
+	
+
+  <ItemGroup>
+    <Reference Include="FourInRowLibrary">
+      <HintPath>..\FourInRowLibrary\bin\Debug\netstandard2.0\FourInRowLibrary.dll</HintPath>
+	</Reference>
+  </ItemGroup>
+	
+
+  <ItemGroup>
+    <Resource Include="images\fourInrowBackground.jpg" />
+    <Resource Include="images\login.png" />
+  </ItemGroup>
+
+</Project>
